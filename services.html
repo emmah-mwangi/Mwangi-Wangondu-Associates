@@ -1,300 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Our Services - MWANGI WANGONDU & ASSOCIATES</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f2f2f2;
-    }
-    header {
-      background-color: #001f3f;
-      color: #fff;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #fff;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-    }
-    nav ul li a:hover {
-      color: #1e90ff;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 20px;
-      }
-      nav ul.show {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      padding: 40px;
-    }
-    .service-section {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .service-section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-    h2 {
-      color: #003366;
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 8px;
-      font-size: 15px;
-      color: #333;
-    }
-    .carousel-background {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      z-index: 0;
-    }
-    .carousel-background img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .carousel-background img.active {
-      opacity: 1;
-    }
-    .consultation-container {
-      max-width: 600px;
-      margin: -200px auto 2rem;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-      position: relative;
-      z-index: 2;
-    }
-    .consultation-container input,
-    .consultation-container textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .consultation-container button {
-      background: #0a2c46;
-      color: white;
-      padding: 0.75rem;
-      border: none;
-      width: 100%;
-      border-radius: 4px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .consultation-container button:hover {
-      background: #084064;
-    }
-    .success {
-      background: #e6ffed;
-      border-left: 5px solid #34a853;
-      padding: 1rem;
-      margin-top: 1rem;
-      display: none;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Services | Mwangi Wangondu & Associates - Audit, Tax & Advisory</title>
+  <meta name="description" content="Explore comprehensive professional services: Statutory Audits, KRA Corporate Tax, ERP Implementations (SAP, SAGE, TALLY), Business Valuations, and Financial Advisory across Kenya & East Africa.">
+  <link rel="canonical" href="https://www.mwangiandwangonduassociates.com/services.html">
+  
+  <meta property="og:title" content="Our Services | Mwangi Wangondu & Associates">
+  <meta property="og:description" content="Audit, Assurance, Tax, Financial Systems, and Advisory services built on integrity and professional excellence.">
+  <meta property="og:type" content="website">
 
-  <!-- HEADER -->
-  <header>
-    <h1 class="logo">Mwangi Wangondu & Associates</h1>
-    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-    <nav>
-      <ul id="navList">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutthefirm.html">About</a></li>
-        <li><a href="BOOKACONSULTATION.html">Book A Consultation</a></li>
-        <li><a href="contactpage.html">Contact</a></li>
-      </ul>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Skip Link -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Top Bar -->
+  <div class="top-notice-bar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <span class="badge-reg"><i class="bi bi-patch-check-fill"></i> Regulated by ICPAK</span>
+        <span><i class="bi bi-geo-alt me-1"></i> Vision Plaza, Nairobi &bull; Kitengela Office</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+254723606653"><i class="bi bi-telephone me-1"></i> +254 723606653</a>
+        <span>&bull;</span>
+        <a href="mailto:admin@mwangiandwangonduassociates.com"><i class="bi bi-envelope me-1"></i> admin@mwangiandwangonduassociates.com</a>
+        <span>&bull;</span>
+        <a href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener" class="nav-portal-link py-0 px-2 text-white">
+          <i class="bi bi-lock-fill"></i> Portal
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navbar -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand-wrapper" href="index.html">
+          <img src="https://www.kenyabizlist.com/logos/16046.jpg" alt="Mwangi Wangondu & Associates Logo" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-name">Mwangi Wangondu & Associates</span>
+            <span class="brand-subline">Certified Public Accountants (K)</span>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" 
+                aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutthefirm.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="services.html" aria-current="page">Our Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactpage.html">Contact Us</a>
+            </li>
+            <li class="nav-item ms-lg-3 my-2 my-lg-0">
+              <a class="btn-mwa-cta" href="BOOKACONSULTATION.html">
+                <i class="bi bi-calendar2-check me-1"></i> Book a Consultation
+              </a>
+            </li>
+            <li class="nav-item ms-lg-2 d-md-none mt-2">
+              <a class="btn btn-sm btn-outline-light w-100" href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener">
+                <i class="bi bi-person-badge me-1"></i> Employee Portal
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <!-- SERVICES -->
-  <div class="container">
-    <div class="service-section">
-      <h2>Audit, Assurance & Advisory</h2>
-      <ul>
-        <li>Annual statutory audit services – External audit</li>
-        <li>Financial Statements Audit</li>
-        <li>Internal Audit Services</li>
-        <li>Information Risk Management</li>
-        <li>Regulatory and Compliance Services</li>
-        <li>Program Management and Quality Assurance</li>
-        <li>Financial Risk Management</li>
-        <li>Accounting Advisory Services</li>
-        <li>Business Performance Services</li>
-        <li>People Advisory Services</li>
-      </ul>
-    </div>
-    <div class="service-section">
-      <h2>Tax Services</h2>
-      <ul>
-        <li>Business Tax Consulting – Tax planning</li>
-        <li>Tax exemption processing</li>
-        <li>Financial Services Taxation</li>
-        <li>Tax Litigation with KRA (Kenya Revenue Authority)</li>
-        <li>International Taxation Services</li>
-        <li>Transfer pricing</li>
-        <li>International Executive Services</li>
-        <li>VAT (Monthly returns, claims processing)</li>
-        <li>Customs and Excise</li>
-        <li>Investor Advisory</li>
-        <li>Filing Statutory Returns</li>
-        <li>Legal Compliance Advisory</li>
-      </ul>
-    </div>
-    <div class="service-section">
-      <h2>Financial System Services</h2>
-      <ul>
-        <li>ERP implementation (SAP, SAGE, TALLY)</li>
-        <li>System Audit Services</li>
-        <li>System Training</li>
-      </ul>
-    </div>
-    <div class="service-section">
-      <h2>Financial Advisory Services</h2>
-      <ul>
-        <li>Acquisitions and Disposals</li>
-        <li>Business Valuations</li>
-        <li>Privatization Financial Restructuring</li>
-        <li>Insolvency Services</li>
-        <li>Business Turnaround</li>
-        <li>Risk Management</li>
-        <li>Anti-Money Laundering</li>
-        <li>Fraud, Investigation</li>
-        <li>Ethics and Integrity</li>
-        <li>Regulatory Investigations</li>
-      </ul>
-    </div>
-  </div>
+  <main id="main">
+    
+    <!-- SUBHERO BANNER -->
+    <section class="subhero-banner">
+      <div class="container">
+        <div class="hero-eyebrow">
+          <i class="bi bi-briefcase"></i> Certified Professional Solutions
+        </div>
+        <h1 class="display-5 fw-bold">Our Services</h1>
+        <p class="subhero-lead">
+          Comprehensive, tailored audit, tax, financial systems, and advisory services for businesses, NGOs, and public institutions across Kenya and East Africa.
+        </p>
+      </div>
+    </section>
 
-  <!-- BACKGROUND CAROUSEL -->
-  <div class="carousel-background">
-    <img src="https://www.isotracker.com/wp-content/uploads/2014/10/quality-audits.jpg" class="active" />
-    <img src="https://media.licdn.com/dms/image/v2/D4D12AQG7CeWMqMqLMA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1713990266219?e=2147483647&v=beta&t=_qAbf0UMT_05fI8xi8vNAdDRqmBWKAMK8gsA-8rshgw" />
-    <img src="https://www.grantthornton.in/globalassets/1.-member-firms/india/assets/pdf-images/1200x627px/1200x627px-ogi-financial-reporting-advisory-services.jpg" />
-  </div>
+    <!-- PRACTICE PILLARS QUICK JUMP -->
+    <section class="py-3 bg-light border-bottom">
+      <div class="container d-flex flex-wrap gap-2 justify-content-center">
+        <a href="#audit" class="btn btn-sm btn-outline-primary px-3 rounded-pill">1. Audit &amp; Assurance</a>
+        <a href="#tax" class="btn btn-sm btn-outline-primary px-3 rounded-pill">2. Tax Services</a>
+        <a href="#systems" class="btn btn-sm btn-outline-primary px-3 rounded-pill">3. Financial Systems (ERP)</a>
+        <a href="#advisory" class="btn btn-sm btn-outline-primary px-3 rounded-pill">4. Financial Advisory</a>
+        <a href="#fma" class="btn btn-sm btn-outline-primary px-3 rounded-pill">5. Financial Management Agency</a>
+      </div>
+    </section>
 
-  <!-- CONSULTATION BOOKING -->
-  <section class="consultation-container">
-    <h2>Book a Consultation</h2>
-    <form id="consultationForm">
-      <input type="text" id="name" placeholder="Full Name" required />
-      <input type="email" id="email" placeholder="Email Address" required />
-      <input type="tel" id="phone" placeholder="Phone Number" required />
-      <input type="date" id="date" required />
-      <input type="time" id="time" required />
-      <textarea id="message" rows="4" placeholder="Tell us more about your needs..."></textarea>
-     <button type="submit">  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfY7v4T_hk_mo5ighP7AKlqAWXKIx1JSFpKCvsXzzXSy44f1g/viewform?usp=dialog" class="btn-link" target="_blank">
-    Submit Booking </a></button>
-    </form>
-    <div class="success" id="successMessage">
-      ✅ Your consultation has been booked. We will get in touch soon!
-    </div>
-  </section>
+    <!-- 1. AUDIT, ASSURANCE & ADVISORY -->
+    <section id="audit" class="section-py">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal-up">
+            <div class="p-4 bg-light-alt rounded-4 border border-secondary border-opacity-10 shadow-sm">
+              <div class="service-icon-box mb-3">
+                <i class="bi bi-clipboard-check"></i>
+              </div>
+              <span class="badge bg-primary text-white mb-2">Practice Pillar 01</span>
+              <h3>Audit, Assurance &amp; Advisory</h3>
+              <p class="text-muted small mb-4">
+                Delivering statutory rigor, investor confidence, and enhanced risk management aligned with International Standards on Auditing (ISA) and IFRS/IPSAS frameworks.
+              </p>
+              <a href="BOOKACONSULTATION.html" class="btn-mwa-primary w-100">
+                <i class="bi bi-calendar-check me-2"></i> Request an Audit Proposal
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal-up">
+            <h3 class="mb-3">Statutory Audits &amp; Assurance Capabilities</h3>
+            <p>
+              Our audit methodology is designed to provide constructive recommendations on internal controls, governance, and business systems, while maintaining the highest independence required by ICPAK and international bodies.
+            </p>
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Annual Statutory Audits</div>
+                  <div class="text-muted small">Independent external audits for SMEs, corporations, and statutory bodies.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Financial Statements Audit</div>
+                  <div class="text-muted small">Full reporting compliance with IFRS and IPSAS accounting frameworks.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Internal Audit Services</div>
+                  <div class="text-muted small">Outsourced or co-sourced internal audit to evaluate controls and risk.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Information Risk Management</div>
+                  <div class="text-muted small">Assessing accounting data security, IT systems, and ledger integrity.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Regulatory &amp; Compliance</div>
+                  <div class="text-muted small">Verification of sector-specific regulatory requirements and returns.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Program Quality Assurance</div>
+                  <div class="text-muted small">Grant audits and donor monitoring for international NGOs and trusts.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Financial Risk Management</div>
+                  <div class="text-muted small">Identifying and mitigating structural financial and liquidity exposures.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Business Performance &amp; Advisory</div>
+                  <div class="text-muted small">Accounting advisory, operational efficiency, and people advisory services.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TAX SERVICES -->
+    <section id="tax" class="section-py bg-light-alt">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7 order-2 order-lg-1 reveal-up">
+            <h3 class="mb-3">Comprehensive Corporate &amp; International Tax</h3>
+            <p>
+              Navigating evolving Kenya Revenue Authority (KRA) mandates and international cross-border frameworks requires experienced tax practitioners. We provide robust compliance and strategic counsel to protect your financial position.
+            </p>
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Business Tax Consulting</div>
+                  <div class="text-muted small">Proactive corporate tax planning and statutory compliance.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Tax Exemption Processing</div>
+                  <div class="text-muted small">Assisting NGOs, religious institutions, and eligible entities with KRA exemptions.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Tax Litigation with KRA</div>
+                  <div class="text-muted small">Dispute representation, Tax Appeals Tribunal support, and audit defense.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> International Taxation &amp; Transfer Pricing</div>
+                  <div class="text-muted small">Documentation, cross-border compliance, and executive taxation.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> VAT &amp; Customs &amp; Excise</div>
+                  <div class="text-muted small">Monthly VAT returns, VAT refund claim processing, and customs tariffs.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Statutory Filing &amp; Legal Advisory</div>
+                  <div class="text-muted small">PAYE, Withholding Tax, corporate returns, and investor compliance.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 reveal-up">
+            <div class="p-4 bg-white rounded-4 border border-secondary border-opacity-10 shadow-sm">
+              <div class="service-icon-box mb-3">
+                <i class="bi bi-percent"></i>
+              </div>
+              <span class="badge bg-primary text-white mb-2">Practice Pillar 02</span>
+              <h3>Tax Services</h3>
+              <p class="text-muted small mb-4">
+                Full-spectrum taxation advisory: from routine monthly statutory returns to complex transfer pricing documentation and high-stakes KRA dispute representation.
+              </p>
+              <a href="BOOKACONSULTATION.html" class="btn-mwa-primary w-100">
+                <i class="bi bi-calendar-check me-2"></i> Book Tax Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FINANCIAL SYSTEMS & ERP -->
+    <section id="systems" class="section-py">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal-up">
+            <div class="p-4 bg-light-alt rounded-4 border border-secondary border-opacity-10 shadow-sm">
+              <div class="service-icon-box mb-3">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <span class="badge bg-primary text-white mb-2">Practice Pillar 03</span>
+              <h3>Financial System Services</h3>
+              <p class="text-muted small mb-4">
+                Bridging accounting discipline with enterprise technology. Ensuring seamless software adoption, airtight audit trails, and staff capability.
+              </p>
+              <a href="BOOKACONSULTATION.html" class="btn-mwa-primary w-100">
+                <i class="bi bi-calendar-check me-2"></i> Discuss System Implementation
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal-up">
+            <h3 class="mb-3">ERP Deployments &amp; Information Systems Audits</h3>
+            <p>
+              A robust financial software architecture is the foundation of timely reporting and fraud prevention. Our team implements industry-standard systems tailored to SME and enterprise scale:
+            </p>
+            <div class="row g-3 mt-2">
+              <div class="col-md-4">
+                <div class="p-3 bg-white border rounded shadow-xs text-center h-100">
+                  <i class="bi bi-gear-wide-connected text-primary fs-2 mb-2"></i>
+                  <div class="fw-bold text-dark">ERP Implementation</div>
+                  <div class="text-muted small mt-1">Specialized setup and chart of accounts design in <strong>SAP, SAGE, and TALLY</strong>.</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-3 bg-white border rounded shadow-xs text-center h-100">
+                  <i class="bi bi-shield-lock text-primary fs-2 mb-2"></i>
+                  <div class="fw-bold text-dark">System Audit Services</div>
+                  <div class="text-muted small mt-1">Reviewing user authorization, automated controls, and security of financial databases.</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-3 bg-white border rounded shadow-xs text-center h-100">
+                  <i class="bi bi-person-video3 text-primary fs-2 mb-2"></i>
+                  <div class="fw-bold text-dark">Staff System Training</div>
+                  <div class="text-muted small mt-1">Hands-on user coaching to ensure your finance staff operates software with accuracy.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FINANCIAL ADVISORY -->
+    <section id="advisory" class="section-py bg-light-alt">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7 order-2 order-lg-1 reveal-up">
+            <h3 class="mb-3">Strategic Transaction &amp; Risk Advisory</h3>
+            <p>
+              Guiding organizations through pivotal growth, restructuring, or regulatory scrutiny with independent valuation, forensic rigor, and turnaround insight.
+            </p>
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Acquisitions and Disposals</div>
+                  <div class="text-muted small">Due diligence, transaction structuring, and divestiture advisory.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Business Valuations</div>
+                  <div class="text-muted small">Independent asset, equity, and company valuations for commercial and court purposes.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Financial Restructuring &amp; Turnaround</div>
+                  <div class="text-muted small">Privatization advisory, debt restructuring, and corporate solvency support.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Insolvency Services</div>
+                  <div class="text-muted small">Receivership, liquidation, and formal creditor administration.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Anti-Money Laundering (AML)</div>
+                  <div class="text-muted small">AML risk assessment, compliance policy frameworks, and reporting systems.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded shadow-xs h-100">
+                  <div class="fw-bold text-dark mb-1"><i class="bi bi-check-lg text-primary me-1"></i> Fraud &amp; Regulatory Investigations</div>
+                  <div class="text-muted small">Forensic auditing, internal theft investigation, and ethics compliance reviews.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 reveal-up">
+            <div class="p-4 bg-white rounded-4 border border-secondary border-opacity-10 shadow-sm">
+              <div class="service-icon-box mb-3">
+                <i class="bi bi-bar-chart-line"></i>
+              </div>
+              <span class="badge bg-primary text-white mb-2">Practice Pillar 04</span>
+              <h3>Financial Advisory Services</h3>
+              <p class="text-muted small mb-4">
+                High-level consultancy addressing corporate restructuring, risk management, forensic inquiries, and transaction support.
+              </p>
+              <a href="BOOKACONSULTATION.html" class="btn-mwa-primary w-100">
+                <i class="bi bi-calendar-check me-2"></i> Book Advisory Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FINANCIAL MANAGEMENT AGENCY (FMA) & MANUALS -->
+    <section id="fma" class="section-py">
+      <div class="container">
+        <div class="p-4 p-md-5 rounded-4 text-white" style="background: linear-gradient(135deg, #001f3f 0%, #003366 100%);">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="badge bg-info text-dark text-uppercase px-3 py-1 mb-2 fw-bold">Specialized Package</span>
+              <h2 class="text-white display-6 fw-bold mb-3">Financial Management Agency (FMA) Services</h2>
+              <p class="lead text-white-50 mb-4">
+                Our Financial Management Agency package provides organizations with institutional capacity building, sound procurement governance, staff recruitment support, and comprehensive System Manuals on Financial Management, Accounting, and HR.
+              </p>
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <span class="badge bg-white text-dark p-2"><i class="bi bi-check-circle text-primary me-1"></i> Accounting &amp; Financial Manuals</span>
+                <span class="badge bg-white text-dark p-2"><i class="bi bi-check-circle text-primary me-1"></i> HR Policies &amp; Procedures</span>
+                <span class="badge bg-white text-dark p-2"><i class="bi bi-check-circle text-primary me-1"></i> Budgetary &amp; Cost Control</span>
+                <span class="badge bg-white text-dark p-2"><i class="bi bi-check-circle text-primary me-1"></i> Donor Grant Accountability</span>
+              </div>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="BOOKACONSULTATION.html" class="btn-mwa-cta btn-lg w-100">
+                <i class="bi bi-calendar-check me-2"></i> Inquire About FMA
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section-py bg-light-alt text-center">
+      <div class="container reveal-up">
+        <h2 class="section-title mb-3">Ready to Discuss Your Organization's Audit or Advisory Needs?</h2>
+        <p class="section-subtitle mx-auto mb-4" style="max-width: 650px;">
+          Submit your requirements via our official consultation booking receiver and a lead partner will connect with you promptly.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a class="btn-mwa-cta btn-lg" href="BOOKACONSULTATION.html">
+            <i class="bi bi-calendar2-check me-2"></i> Book a Consultation
+          </a>
+          <a class="btn-mwa-outline-dark btn-lg" href="contactpage.html">
+            <i class="bi bi-telephone me-2"></i> Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Mwangi Wangondu & Associates. All rights reserved.
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 footer-brand">
+          <h4>Mwangi Wangondu &amp; Associates</h4>
+          <p class="footer-lead">
+            Premier Certified Public Accountants offering audit, tax, financial systems, and capacity development across Kenya and East Africa since 2010.
+          </p>
+          <div class="badge-reg mb-2">
+            <i class="bi bi-shield-check"></i> Registered by ICPAK
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+            <li><a href="aboutthefirm.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Our Services</a></li>
+            <li><a href="contactpage.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+            <li><a href="BOOKACONSULTATION.html"><i class="bi bi-chevron-right"></i> Book Consultation</a></li>
+            <li><a href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener"><i class="bi bi-lock"></i> Employee Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading">Practice Areas</h5>
+          <ul class="footer-links-list">
+            <li><a href="services.html#audit"><i class="bi bi-chevron-right"></i> Audit, Assurance &amp; Advisory</a></li>
+            <li><a href="services.html#tax"><i class="bi bi-chevron-right"></i> Corporate &amp; International Tax</a></li>
+            <li><a href="services.html#systems"><i class="bi bi-chevron-right"></i> Financial Systems &amp; ERP</a></li>
+            <li><a href="services.html#advisory"><i class="bi bi-chevron-right"></i> Financial &amp; Risk Advisory</a></li>
+            <li><a href="services.html#fma"><i class="bi bi-chevron-right"></i> Financial Management Agency (FMA)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading">Contact Details</h5>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <div>
+              <strong>Telephone:</strong><br>
+              <a href="tel:+254723606653">+254 723606653</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <div>
+              <strong>Email:</strong><br>
+              <a href="mailto:admin@mwangiandwangonduassociates.com">admin@mwangiandwangonduassociates.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div>
+              <strong>Offices:</strong><br>
+              <span>Vision Plaza, Mombasa Road, Nairobi</span><br>
+              <span>Kitengela Office (Near Hindu Temple)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>
+          &copy; 2026 Mwangi Wangondu &amp; Associates. All rights reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <span>Registered Certified Public Accountants</span>
+          <span>&bull;</span>
+          <span>Kenya &bull; East Africa</span>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    function toggleMenu() {
-      var navList = document.getElementById("navList");
-      navList.classList.toggle("show");
-    }
-
-    document.getElementById('consultationForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      if (!name || !email || !phone) {
-        alert('Please fill out all required fields.');
-        return;
-      }
-      document.getElementById('successMessage').style.display = 'block';
-      this.reset();
-    });
-
-    const bgImages = document.querySelectorAll('.carousel-background img');
-    let bgIndex = 0;
-    setInterval(() => {
-      bgImages[bgIndex].classList.remove('active');
-      bgIndex = (bgIndex + 1) % bgImages.length;
-      bgImages[bgIndex].classList.add('active');
-    }, 4000);
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
-
-

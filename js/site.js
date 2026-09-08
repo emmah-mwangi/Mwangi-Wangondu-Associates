@@ -1,146 +1,431 @@
-// js/site.js
-// Global site JavaScript for Mwangi Wangondu & Associates
-// Features: navbar scroll state, active nav, counters, back-to-top, reveal animations, form validation
+/**
+ * ============================================================================
+ * MWANGI WANGONDU & ASSOCIATES - CORE CLIENT SCRIPT (js/site.js)
+ * High-performance, Accessible, Zero-dependency Interactions
+ * ============================================================================
+ */
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Navbar: add solid background on scroll
-  function initNavbar() {
-    const nav = document.getElementById('mainNav');
-    if (!nav) return;
-    const scrolledClass = 'navbar-scrolled';
-    function onScroll() {
-      if (window.scrollY > 40) nav.classList.add(scrolledClass);
-      else nav.classList.remove(scrolledClass);
-    }
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
+  initCounters();
+  initScrollReveal();
+  initBackToTop();
+  initConsultationForm();
+  initContactForm();
+  initServiceModals();
+});
 
-  // Active nav item by filename
-  function initActiveNav() {
-    const links = document.querySelectorAll('.navbar-nav .nav-link');
-    if (!links.length) return;
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-      if (!href) return;
-      if (href.endsWith(path) || (href === 'index.html' && path === '')) {
-        link.classList.add('active');
+/**
+ * 1. Navbar Scroll Transition & Active Page Detection
+ */
+function initNavbar() {
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
-    });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
   }
 
-  // Back to top
-  function initBackToTop() {
-    const btn = document.getElementById('backToTop');
-    if (!btn) return;
-    function onScroll() {
-      if (window.scrollY > 500) btn.style.display = 'block';
-      else btn.style.display = 'none';
+  // Active page indicator
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const currentPath = window.location.pathname.toLowerCase();
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href')?.toLowerCase() || '';
+    const cleanHref = href.replace('.html', '').replace(/^\//, '');
+    const cleanPath = currentPath.replace('.html', '').replace(/^\//, '');
+
+    if (
+      (cleanPath === '' && (cleanHref === 'index' || cleanHref === '')) ||
+      (cleanPath !== '' && cleanHref !== '' && (cleanPath.includes(cleanHref) || cleanHref.includes(cleanPath)))
+    ) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+  });
 
-  // Intersection Observer reveal animations
-  function initReveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    if (!reveals.length) return;
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-in');
-          obs.unobserve(entry.target);
+  // Close mobile nav when clicking a link
+  const navbarCollapse = document.getElementById('navCollapse');
+  if (navbarCollapse) {
+    const mobileLinks = navbarCollapse.querySelectorAll('.nav-link, .btn');
+    mobileLinks.forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+          const bsCollapse = bootstrap?.Collapse?.getInstance(navbarCollapse);
+          if (bsCollapse) {
+            bsCollapse.hide();
+          } else {
+            navbarCollapse.classList.remove('show');
+          }
         }
       });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
+    });
   }
+}
 
-  // Animated counters (runs once when visible)
-  function initCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    if (!counters.length) return;
-    const speed = 2000; // duration ms
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+/**
+ * 2. Animated Numerical Counters (IntersectionObserver)
+ */
+function initCounters() {
+  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  if (!statNumbers.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
         const el = entry.target;
-        const target = parseInt(el.getAttribute('data-target')) || 0;
-        if (isNaN(target) || target === 0) {
-          el.textContent = el.getAttribute('data-target') || '—';
+        const targetStr = el.getAttribute('data-target');
+        const target = parseInt(targetStr, 10);
+
+        if (isNaN(target)) {
           obs.unobserve(el);
           return;
         }
-        let start = 0;
-        const step = (timestamp) => {
-          if (!start) start = timestamp;
-          const progress = Math.min((timestamp - start) / speed, 1);
-          el.textContent = Math.floor(progress * target);
-          if (progress < 1) window.requestAnimationFrame(step);
-          else el.textContent = target;
-        };
-        window.requestAnimationFrame(step);
-        obs.unobserve(el);
-      });
-    }, { threshold: 0.3 });
-    counters.forEach(c => observer.observe(c));
-  }
 
-  // Simple form validation for pages that include forms
-  function initForms() {
-    // contact form
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const name = contactForm.querySelector('#name');
-        const email = contactForm.querySelector('#email');
-        const message = contactForm.querySelector('#message');
-        let valid = true;
-        [name, email, message].forEach(field => {
-          if (!field) return;
-          field.classList.remove('is-invalid');
-          const errorId = field.getAttribute('aria-describedby');
-          if (errorId) {
-            const err = document.getElementById(errorId);
-            if (err) err.textContent = '';
+        const duration = 1400;
+        const startTime = performance.now();
+
+        const updateCount = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const currentVal = Math.floor(easeOut * target);
+
+          el.textContent = `${currentVal}+`;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.textContent = `${target}+`;
           }
-        });
-        if (!name.value.trim()) { valid = false; name.classList.add('is-invalid'); }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { valid = false; email.classList.add('is-invalid'); }
-        if (!message.value.trim() || message.value.trim().length < 10) { valid = false; message.classList.add('is-invalid'); }
-        if (!valid) return;
-        // No backend configured: show client-side success and reset (explicit messaging)
-        const status = document.getElementById('contactStatus');
-        if (status) {
-          status.classList.remove('d-none', 'alert-danger');
-          status.classList.add('alert-success');
-          status.textContent = 'This is a frontend demo: your message was validated but not sent. To enable submissions, provide a backend endpoint or a third-party form service.';
-        }
-        contactForm.reset();
-      });
-    }
+        };
 
-    // consultation booking form demo if present (pages link to Google Form anyway)
-    const consultForm = document.getElementById('consultationForm');
-    if (consultForm) {
-      consultForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        // Redirect to Google Form link if button has data-url
-        const submitBtn = consultForm.querySelector('button[type="submit"]');
-        const gf = submitBtn && submitBtn.getAttribute('data-gf');
-        if (gf) window.open(gf, '_blank');
-      });
-    }
+        requestAnimationFrame(updateCount);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  statNumbers.forEach(stat => observer.observe(stat));
+}
+
+/**
+ * 3. Scroll Reveal Animations
+ */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal-up');
+  if (!revealElements.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealElements.forEach(el => el.classList.add('revealed'));
+    return;
   }
 
-  // Initialize features
-  initNavbar();
-  initActiveNav();
-  initBackToTop();
-  initReveal();
-  initCounters();
-  initForms();
-});
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * 4. Back to Top Button
+ */
+function initBackToTop() {
+  let backBtn = document.getElementById('backToTopBtn');
+  if (!backBtn) {
+    backBtn = document.createElement('button');
+    backBtn.id = 'backToTopBtn';
+    backBtn.className = 'back-to-top';
+    backBtn.setAttribute('type', 'button');
+    backBtn.setAttribute('aria-label', 'Back to top of page');
+    backBtn.innerHTML = '<i class="bi bi-chevron-up" aria-hidden="true"></i>';
+    document.body.appendChild(backBtn);
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 350) {
+      backBtn.classList.add('visible');
+    } else {
+      backBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/**
+ * 5. Consultation Form Receiver (Replaces Google Form)
+ */
+function initConsultationForm() {
+  const form = document.getElementById('consultationBookingForm');
+  if (!form) return;
+
+  const feedbackBox = document.getElementById('consultationFeedback');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  // Set min date for preferred date picker to today
+  const datePicker = document.getElementById('preferredDate');
+  if (datePicker) {
+    const today = new Date().toISOString().split('T')[0];
+    datePicker.setAttribute('min', today);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const fullName = document.getElementById('fullName')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const phone = document.getElementById('phone')?.value.trim();
+    const organization = document.getElementById('organization')?.value.trim() || '';
+    const sector = document.getElementById('sector')?.value || '';
+    const serviceArea = document.getElementById('serviceArea')?.value || '';
+    const consultationMode = document.getElementById('consultationMode')?.value || '';
+    const preferredDate = document.getElementById('preferredDate')?.value || '';
+    const preferredTimeWindow = document.getElementById('preferredTimeWindow')?.value || '';
+    const message = document.getElementById('message')?.value.trim() || '';
+
+    // Validation
+    if (!fullName) {
+      showFeedback(feedbackBox, 'Please enter your Full Name.', 'error');
+      document.getElementById('fullName')?.focus();
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      showFeedback(feedbackBox, 'Please enter a valid corporate or personal email address.', 'error');
+      document.getElementById('email')?.focus();
+      return;
+    }
+    if (!phone || phone.length < 8) {
+      showFeedback(feedbackBox, 'Please provide a valid contact telephone number.', 'error');
+      document.getElementById('phone')?.focus();
+      return;
+    }
+    if (!serviceArea) {
+      showFeedback(feedbackBox, 'Please select the primary service area you require assistance with.', 'error');
+      document.getElementById('serviceArea')?.focus();
+      return;
+    }
+
+    // Set Loading State
+    const originalBtnContent = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Submitting Booking...
+    `;
+
+    try {
+      const response = await fetch('/api/consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          fullName,
+          email,
+          phone,
+          organization,
+          sector,
+          serviceArea,
+          consultationMode,
+          preferredDate,
+          preferredTimeWindow,
+          message
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        const ref = result.referenceCode;
+        const summary = result.bookingSummary;
+
+        const successHtml = `
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill fs-4 text-success"></i>
+            <strong class="fs-5">Consultation Request Registered Successfully!</strong>
+          </div>
+          <p class="mb-2">Thank you, <strong>${escapeHtml(summary.fullName)}</strong>. Your request has been securely dispatched to the Mwangi Wangondu & Associates audit & advisory team.</p>
+          
+          <div class="receipt-box">
+            <div class="row g-2">
+              <div class="col-sm-6"><strong>Reference Number:</strong> <span class="badge bg-primary text-white">${ref}</span></div>
+              <div class="col-sm-6"><strong>Service Area:</strong> ${escapeHtml(summary.serviceArea)}</div>
+              <div class="col-sm-6"><strong>Consultation Mode:</strong> ${escapeHtml(summary.consultationMode)}</div>
+              <div class="col-sm-6"><strong>Preferred Schedule:</strong> ${escapeHtml(summary.preferredDate)} (${escapeHtml(summary.preferredTimeWindow)})</div>
+            </div>
+          </div>
+          <div class="mt-3 small text-muted">
+            <i class="bi bi-info-circle me-1"></i> A Managing Partner or Senior Associate will reach out to you via <strong>${escapeHtml(email)}</strong> or <strong>${escapeHtml(phone)}</strong> to confirm appointment details.
+          </div>
+        `;
+
+        showFeedback(feedbackBox, successHtml, 'success', true);
+        form.reset();
+        feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        const errText = result.error || 'Unable to submit your booking at this moment. Please try again or reach us at +254 723606653.';
+        showFeedback(feedbackBox, errText, 'error');
+      }
+    } catch (err) {
+      console.error('Submission error:', err);
+      showFeedback(
+        feedbackBox,
+        'Network error encountered while contacting the server. Please check your connectivity or reach us directly at admin@mwangiandwangonduassociates.com.',
+        'error'
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnContent;
+    }
+  });
+}
+
+/**
+ * 6. Contact Form Receiver
+ */
+function initContactForm() {
+  const form = document.getElementById('contactInquiryForm');
+  if (!form) return;
+
+  const feedbackBox = document.getElementById('contactFeedback');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const fullName = document.getElementById('contactName')?.value.trim();
+    const email = document.getElementById('contactEmail')?.value.trim();
+    const phone = document.getElementById('contactPhone')?.value.trim() || '';
+    const subject = document.getElementById('contactSubject')?.value.trim() || 'General Inquiry';
+    const message = document.getElementById('contactMessage')?.value.trim();
+
+    if (!fullName) {
+      showFeedback(feedbackBox, 'Please enter your Full Name.', 'error');
+      document.getElementById('contactName')?.focus();
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      showFeedback(feedbackBox, 'Please enter a valid email address.', 'error');
+      document.getElementById('contactEmail')?.focus();
+      return;
+    }
+    if (!message || message.length < 5) {
+      showFeedback(feedbackBox, 'Please provide a message with at least 5 characters.', 'error');
+      document.getElementById('contactMessage')?.focus();
+      return;
+    }
+
+    const originalBtnContent = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Transmitting Message...
+    `;
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fullName, email, phone, subject, message })
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        const ref = result.referenceCode;
+        const successHtml = `
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill fs-4 text-success"></i>
+            <strong class="fs-5">Inquiry Sent Successfully</strong>
+          </div>
+          <p class="mb-1">Thank you for reaching out to Mwangi Wangondu & Associates.</p>
+          <p class="mb-0 small text-muted">Inquiry Reference: <strong>${ref}</strong>. Our team will review your message and reply promptly.</p>
+        `;
+        showFeedback(feedbackBox, successHtml, 'success', true);
+        form.reset();
+        feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        const errText = result.error || 'Failed to submit inquiry. Please call +254 723606653 or email admin@mwangiandwangonduassociates.com.';
+        showFeedback(feedbackBox, errText, 'error');
+      }
+    } catch (err) {
+      console.error('Contact submit error:', err);
+      showFeedback(
+        feedbackBox,
+        'A connection error occurred. Please contact admin@mwangiandwangonduassociates.com or call +254 723606653.',
+        'error'
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnContent;
+    }
+  });
+}
+
+/**
+ * 7. Service Detail Modals / Interactive Inspection
+ */
+function initServiceModals() {
+  const serviceDetailTriggers = document.querySelectorAll('[data-service-target]');
+  if (!serviceDetailTriggers.length) return;
+
+  serviceDetailTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = trigger.getAttribute('data-service-target');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetSection.classList.add('highlight-section');
+        setTimeout(() => targetSection.classList.remove('highlight-section'), 2000);
+      }
+    });
+  });
+}
+
+/**
+ * Helper: Feedback Display
+ */
+function showFeedback(container, message, type, isHtml = false) {
+  if (!container) return;
+  container.className = `form-feedback-box show ${type}`;
+  if (isHtml) {
+    container.innerHTML = message;
+  } else {
+    container.textContent = message;
+  }
+}
+
+/**
+ * Helper: Simple HTML Sanitizer for safe DOM insertion
+ */
+function escapeHtml(string) {
+  if (!string) return '';
+  return String(string)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}

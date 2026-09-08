@@ -1,184 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audit Firm Consultation Booking</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #333;
-    }
-    header {
-      background: #0a2c46;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-    .container {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    h2 {
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-    button {
-      background: #0a2c46;
-      color: white;
-      padding: 0.75rem;
-      border: none;
-      width: 100%;
-      border-radius: 4px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #084064;
-    }
-    .success {
-      background: #e6ffed;
-      border-left: 5px solid #34a853;
-      padding: 1rem;
-      margin-top: 1rem;
-      display: none;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Consultation | Mwangi Wangondu & Associates - Audit & Advisory</title>
+  <meta name="description" content="Schedule a professional consultation with senior audit, tax, and financial advisory partners at Mwangi Wangondu & Associates. Virtual or in-person sessions at Nairobi and Kitengela.">
+  <link rel="canonical" href="https://www.mwangiandwangonduassociates.com/BOOKACONSULTATION.html">
+  
+  <meta property="og:title" content="Book a Consultation | Mwangi Wangondu & Associates">
+  <meta property="og:description" content="Schedule a direct meeting with certified public accountants for audit, tax planning, ERP systems, or advisory.">
+  <meta property="og:type" content="website">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <header>
-  <h1 class="logo">Mwangi Wangondu & Associates</h1>
-  <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-  <nav>
-    <ul id="navList">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="aboutthefirm.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contactpage.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Skip Link -->
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<style>
-  header {
-    background-color: #001f3f;
-    color: #fff;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-  }
-
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  nav ul li a:hover {
-    color: #1e90ff;
-  }
-
-  .menu-toggle {
-    display: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-  }
-
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      width: 100%;
-      display: none;
-      margin-top: 20px;
-    }
-
-    nav ul.show {
-      display: flex;
-    }
-
-    .menu-toggle {
-      display: block;
-    }
-  }
-</style>
-
-<script>
-  function toggleMenu() {
-    var navList = document.getElementById("navList");
-    navList.classList.toggle("show");
-  }
-</script>
-
-
-  <div class="container">
-    <h2>Book a Consultation</h2>
-    <form id="consultationForm">
-      <input type="text" id="name" placeholder="Full Name" required />
-      <input type="email" id="email" placeholder="Email Address" required />
-      <input type="tel" id="phone" placeholder="Phone Number" required />
-      <input type="date" id="date" required />
-      <input type="time" id="time" required />
-      <textarea id="message" rows="4" placeholder="Tell us more about your needs..."></textarea>
-      <button type="submit">  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfY7v4T_hk_mo5ighP7AKlqAWXKIx1JSFpKCvsXzzXSy44f1g/viewform?usp=dialog" class="btn-link" target="_blank">
-    Submit Booking </a></button>
-    </form>
-    <div class="success" id="successMessage">
-      ✅ Your consultation has been booked. We will get in touch soon!
+  <!-- Top Bar -->
+  <div class="top-notice-bar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <span class="badge-reg"><i class="bi bi-patch-check-fill"></i> Regulated by ICPAK</span>
+        <span><i class="bi bi-geo-alt me-1"></i> Vision Plaza, Nairobi &bull; Kitengela Office</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+254723606653"><i class="bi bi-telephone me-1"></i> +254 723606653</a>
+        <span>&bull;</span>
+        <a href="mailto:admin@mwangiandwangonduassociates.com"><i class="bi bi-envelope me-1"></i> admin@mwangiandwangonduassociates.com</a>
+        <span>&bull;</span>
+        <a href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener" class="nav-portal-link py-0 px-2 text-white">
+          <i class="bi bi-lock-fill"></i> Portal
+        </a>
+      </div>
     </div>
   </div>
 
-  <script>
-    const form = document.getElementById('consultationForm');
-    const successMessage = document.getElementById('successMessage');
+  <!-- Header & Navbar -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand-wrapper" href="index.html">
+          <img src="https://www.kenyabizlist.com/logos/16046.jpg" alt="Mwangi Wangondu & Associates Logo" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-name">Mwangi Wangondu & Associates</span>
+            <span class="brand-subline">Certified Public Accountants (K)</span>
+          </div>
+        </a>
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" 
+                aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutthefirm.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Our Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactpage.html">Contact Us</a>
+            </li>
+            <li class="nav-item ms-lg-3 my-2 my-lg-0">
+              <a class="btn-mwa-cta active" href="BOOKACONSULTATION.html" aria-current="page">
+                <i class="bi bi-calendar2-check me-1"></i> Book a Consultation
+              </a>
+            </li>
+            <li class="nav-item ms-lg-2 d-md-none mt-2">
+              <a class="btn btn-sm btn-outline-light w-100" href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener">
+                <i class="bi bi-person-badge me-1"></i> Employee Portal
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-      if (!name || !email || !phone) {
-        alert('Please fill out all required fields.');
-        return;
-      }
+  <main id="main">
+    
+    <!-- SUBHERO BANNER -->
+    <section class="subhero-banner">
+      <div class="container">
+        <div class="hero-eyebrow">
+          <i class="bi bi-shield-check"></i> Direct Partner Engagement
+        </div>
+        <h1 class="display-5 fw-bold">Book an Advisory Consultation</h1>
+        <p class="subhero-lead">
+          Connect directly with a Senior Partner or Specialist Auditor to review your organizational needs, statutory deadlines, or financial systems.
+        </p>
+      </div>
+    </section>
 
-      successMessage.style.display = 'block';
-      form.reset();
-    });
-  </script>
+    <!-- MAIN BOOKING SECTION -->
+    <section class="section-py">
+      <div class="container">
+        <div class="row g-5">
+          
+          <!-- Booking Form Column (Replaces Google Form) -->
+          <div class="col-lg-8 reveal-up">
+            <div class="corporate-form-card">
+              
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <span class="section-eyebrow">Official Appointment Portal</span>
+                  <h2 class="h3 text-dark mb-0">Consultation Registration</h2>
+                </div>
+                <span class="badge bg-light text-primary border px-3 py-2">
+                  <i class="bi bi-lock-fill me-1"></i> Confidential &amp; Encrypted
+                </span>
+              </div>
+              
+              <p class="text-muted small mb-4">
+                Please complete the schedule details below. All submissions are dispatched directly to our practice management desk.
+              </p>
+
+              <!-- Live Submission Feedback (Success Receipt or Error) -->
+              <div id="consultationFeedback" class="form-feedback-box" role="alert"></div>
+
+              <form id="consultationBookingForm" novalidate>
+                <div class="row g-3">
+                  
+                  <!-- Section 1: Contact Particulars -->
+                  <div class="col-12">
+                    <h5 class="border-bottom pb-2 text-primary">1. Personal &amp; Organization Details</h5>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="fullName" class="form-label">Full Name <span class="req">*</span></label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required placeholder="e.g. CPA / Director John Doe">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address <span class="req">*</span></label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="e.g. j.doe@organization.com">
+                    <div class="form-hint">Confirmation and calendar invite will be delivered here.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Telephone / WhatsApp Number <span class="req">*</span></label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="e.g. +254 722 000 000">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="organization" class="form-label">Company / Institution Name</label>
+                    <input type="text" class="form-control" id="organization" name="organization" placeholder="e.g. ABC Manufacturing Ltd / NGO">
+                  </div>
+
+                  <div class="col-12">
+                    <label for="sector" class="form-label">Industry / Client Sector</label>
+                    <select class="form-select" id="sector" name="sector">
+                      <option value="" selected>Select Industry Sector (Optional)</option>
+                      <option value="Healthcare">Healthcare &amp; Pharmaceuticals</option>
+                      <option value="Education">Education &amp; Academic Institutions</option>
+                      <option value="Financial & SACCOs">Financial Institutions, SACCOs &amp; Microfinance</option>
+                      <option value="NGOs & Donors">NGOs, Foundations &amp; Donor Programs</option>
+                      <option value="Real Estate">Real Estate &amp; Property Management</option>
+                      <option value="Logistics & Transport">Logistics, Transport &amp; Freight</option>
+                      <option value="Manufacturing">Manufacturing &amp; Processing</option>
+                      <option value="Retail & E-Commerce">Retail, Distribution &amp; E-Commerce</option>
+                      <option value="SMEs & Family Business">SMEs &amp; Family-Owned Enterprises</option>
+                      <option value="Hospitality & Tourism">Hospitality, Hotels &amp; Tourism</option>
+                      <option value="Public Sector">Public Sector, State Corporations &amp; Agencies</option>
+                      <option value="Professional Services">Professional Services &amp; Consulting</option>
+                      <option value="Agriculture & Agribusiness">Agriculture &amp; Agribusiness</option>
+                      <option value="Technology & Communications">Technology, Media &amp; Communications</option>
+                      <option value="Construction & Infrastructure">Construction &amp; Civil Infrastructure</option>
+                    </select>
+                  </div>
+
+                  <!-- Section 2: Engagement Scope -->
+                  <div class="col-12 mt-4">
+                    <h5 class="border-bottom pb-2 text-primary">2. Engagement Requirements</h5>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="serviceArea" class="form-label">Primary Service Area <span class="req">*</span></label>
+                    <select class="form-select" id="serviceArea" name="serviceArea" required>
+                      <option value="" disabled selected>Select Primary Service Area</option>
+                      <option value="Audit, Assurance & Advisory">Audit, Assurance &amp; Advisory (Statutory, External, Internal)</option>
+                      <option value="Tax Services & KRA Advisory">Tax Services (KRA Dispute, Returns, VAT, Transfer Pricing)</option>
+                      <option value="Financial Systems & ERP">Financial Systems (SAP, SAGE, TALLY Implementation/Audit)</option>
+                      <option value="Financial Advisory & Valuation">Financial Advisory (Valuations, Mergers, Turnaround, AML)</option>
+                      <option value="Financial Management Agency (FMA)">Financial Management Agency (FMA) &amp; Institutional Manuals</option>
+                      <option value="Forensic Audit & Fraud Investigation">Forensic Audit &amp; Fraud Investigation</option>
+                      <option value="General Accounting & Bookkeeping">General Accounting &amp; Compliance Review</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="consultationMode" class="form-label">Consultation Format / Mode <span class="req">*</span></label>
+                    <select class="form-select" id="consultationMode" name="consultationMode" required>
+                      <option value="Virtual Video Conference (Google Meet / Zoom)" selected>Virtual Video Conference (Google Meet / Zoom)</option>
+                      <option value="In-Person at Vision Plaza Nairobi">In-Person at Vision Plaza, Nairobi Office</option>
+                      <option value="In-Person at Kitengela Office">In-Person at Kitengela Office</option>
+                      <option value="Telephone Consultation">Direct Telephone Call</option>
+                      <option value="Client Site Visit">Request On-Site Visit to Our Premises</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="preferredDate" class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" id="preferredDate" name="preferredDate">
+                    <div class="form-hint">Select a business day (Monday - Friday).</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="preferredTimeWindow" class="form-label">Preferred Time Window</label>
+                    <select class="form-select" id="preferredTimeWindow" name="preferredTimeWindow">
+                      <option value="Morning (09:00 AM - 12:00 PM)" selected>Morning (09:00 AM – 12:00 PM EAT)</option>
+                      <option value="Afternoon (02:00 PM - 05:00 PM)">Afternoon (02:00 PM – 05:00 PM EAT)</option>
+                      <option value="Flexible / Any Business Hours">Flexible / Any Available Business Hour</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="message" class="form-label">Brief Description of Needs / Scope</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Briefly specify your audit scope, reporting year-end, current systems, or statutory requirements..."></textarea>
+                  </div>
+
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn-mwa-cta btn-lg w-100">
+                      <i class="bi bi-calendar2-check-fill me-2"></i> Register Consultation Request
+                    </button>
+                    <div class="text-center mt-2 small text-muted">
+                      <i class="bi bi-shield-check text-success me-1"></i> Information submitted is protected under strict professional audit confidentiality standards.
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+          <!-- Sidebar Information Column -->
+          <div class="col-lg-4 reveal-up">
+            
+            <!-- What to Expect Card -->
+            <div class="mwa-card mb-4 shadow-sm">
+              <div class="service-icon-box mb-3">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <h4 class="card-title-mwa">What to Expect</h4>
+              <p class="card-text-mwa small text-muted mb-3">
+                Our initial consultation is designed to deliver immediate clarity and a transparent roadmap for your engagement.
+              </p>
+              
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="value-number" style="width: 28px; height: 28px; font-size: 0.8rem;">1</div>
+                <div>
+                  <strong class="text-dark small d-block">Scope &amp; Risk Assessment</strong>
+                  <span class="text-muted small">We review your organizational structure, reporting timelines, and compliance status.</span>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="value-number" style="width: 28px; height: 28px; font-size: 0.8rem;">2</div>
+                <div>
+                  <strong class="text-dark small d-block">Lead Partner Matching</strong>
+                  <span class="text-muted small">You will be matched with a senior auditor or tax specialist with sector expertise.</span>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="value-number" style="width: 28px; height: 28px; font-size: 0.8rem;">3</div>
+                <div>
+                  <strong class="text-dark small d-block">Confidential Engagement Plan</strong>
+                  <span class="text-muted small">We outline actionable next steps, required documentation, and transparent fee estimates.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Contact Card -->
+            <div class="p-4 bg-light-alt rounded-4 border border-secondary border-opacity-10 shadow-xs mb-4">
+              <h5 class="fw-bold text-dark mb-3"><i class="bi bi-headset me-2 text-primary"></i>Immediate Inquiries</h5>
+              <p class="text-muted small mb-3">
+                If your requirement is time-sensitive or involves an impending statutory deadline, reach our practice manager directly:
+              </p>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-telephone-fill text-primary"></i>
+                <a href="tel:+254723606653" class="fw-bold text-dark">+254 723606653</a>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <i class="bi bi-envelope-fill text-primary"></i>
+                <a href="mailto:admin@mwangiandwangonduassociates.com" class="small text-primary text-break">admin@mwangiandwangonduassociates.com</a>
+              </div>
+              <hr>
+              <div class="small text-muted">
+                <strong>Main Office:</strong><br>
+                Vision Plaza, Mombasa Road, Nairobi<br>
+                <strong>Branch Office:</strong><br>
+                Kitengela (Near Hindu Temple)
+              </div>
+            </div>
+
+            <!-- Accreditation Card -->
+            <div class="p-3 bg-white rounded-3 border text-center">
+              <img src="https://www.kenyabizlist.com/logos/16046.jpg" alt="Mwangi Wangondu & Associates Crest" class="mx-auto mb-2" style="height: 48px;">
+              <div class="fw-bold text-dark small">ICPAK Regulated Practice</div>
+              <div class="text-muted" style="font-size: 0.75rem;">Adhering strictly to International Standards on Auditing (ISA)</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 footer-brand">
+          <h4>Mwangi Wangondu &amp; Associates</h4>
+          <p class="footer-lead">
+            A premier audit, tax, and advisory partnership founded in 2010. Offering rigorous financial clarity and strategic compliance across East Africa.
+          </p>
+          <div class="badge-reg mb-2">
+            <i class="bi bi-shield-check"></i> Registered by ICPAK
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+            <li><a href="aboutthefirm.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Our Services</a></li>
+            <li><a href="contactpage.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+            <li><a href="BOOKACONSULTATION.html"><i class="bi bi-chevron-right"></i> Book Consultation</a></li>
+            <li><a href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener"><i class="bi bi-lock"></i> Employee Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading">Practice Areas</h5>
+          <ul class="footer-links-list">
+            <li><a href="services.html#audit"><i class="bi bi-chevron-right"></i> Audit, Assurance &amp; Advisory</a></li>
+            <li><a href="services.html#tax"><i class="bi bi-chevron-right"></i> Corporate &amp; International Tax</a></li>
+            <li><a href="services.html#systems"><i class="bi bi-chevron-right"></i> Financial Systems &amp; ERP</a></li>
+            <li><a href="services.html#advisory"><i class="bi bi-chevron-right"></i> Financial &amp; Risk Advisory</a></li>
+            <li><a href="services.html#fma"><i class="bi bi-chevron-right"></i> Financial Management Agency (FMA)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading">Contact Details</h5>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <div>
+              <strong>Telephone:</strong><br>
+              <a href="tel:+254723606653">+254 723606653</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <div>
+              <strong>Email:</strong><br>
+              <a href="mailto:admin@mwangiandwangonduassociates.com">admin@mwangiandwangonduassociates.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div>
+              <strong>Offices:</strong><br>
+              <span>Vision Plaza, Mombasa Road, Nairobi</span><br>
+              <span>Kitengela Office (Near Hindu Temple)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>
+          &copy; 2026 Mwangi Wangondu &amp; Associates. All rights reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <span>Registered Certified Public Accountants</span>
+          <span>&bull;</span>
+          <span>Kenya &bull; East Africa</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
-
-

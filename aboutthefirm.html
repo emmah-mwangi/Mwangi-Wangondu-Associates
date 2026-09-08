@@ -1,224 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us | Mwangi Wangondu & Associates</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
-    header {
-      background-color: #1e3a5f;
-      color: white;
-      padding: 20px 0;
-    }
-    .container {
-      width: 90%;
-      margin: auto;
-      max-width: 1200px;
-    }
-    .logo {
-      margin: 0;
-      font-size: 24px;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      gap: 20px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-    .section {
-      padding: 40px 0;
-    }
-    .light-bg {
-      background-color: #f9f9f9;
-    }
-    .profile img {
-      width: 200px;
-      border-radius: 10px;
-    }
-    .tile-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .tile {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease-in-out;
-    }
-    .tile:hover {
-      transform: translateY(-5px);
-    }
-    .tile h3 {
-      margin-top: 0;
-    }
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Mwangi Wangondu & Associates - Audit & Advisory Kenya</title>
+  <meta name="description" content="Learn about Mwangi Wangondu & Associates, founded in 2010. Premier Certified Public Accountants serving Kenya, Uganda, Tanzania, Zambia, and Rwanda under Managing Partner CPA Mwangi Wangondu.">
+  <link rel="canonical" href="https://www.mwangiandwangonduassociates.com/aboutthefirm.html">
+  
+  <meta property="og:title" content="About Us | Mwangi Wangondu & Associates">
+  <meta property="og:description" content="15+ years of operational excellence, ICPAK regulated practice, and leadership in audit, tax, and institutional financial capacity building.">
+  <meta property="og:type" content="website">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <h1 class="logo">Mwangi Wangondu & Associates</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="BOOKACONSULTATION.html">Book A Consultation</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contactpage.html">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- Skip Link -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Top Bar -->
+  <div class="top-notice-bar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <span class="badge-reg"><i class="bi bi-patch-check-fill"></i> Regulated by ICPAK</span>
+        <span><i class="bi bi-geo-alt me-1"></i> Vision Plaza, Nairobi &bull; Kitengela Office</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+254723606653"><i class="bi bi-telephone me-1"></i> +254 723606653</a>
+        <span>&bull;</span>
+        <a href="mailto:admin@mwangiandwangonduassociates.com"><i class="bi bi-envelope me-1"></i> admin@mwangiandwangonduassociates.com</a>
+        <span>&bull;</span>
+        <a href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener" class="nav-portal-link py-0 px-2 text-white">
+          <i class="bi bi-lock-fill"></i> Portal
+        </a>
+      </div>
     </div>
+  </div>
+
+  <!-- Header & Navbar -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand-wrapper" href="index.html">
+          <img src="https://www.kenyabizlist.com/logos/16046.jpg" alt="Mwangi Wangondu & Associates Logo" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-name">Mwangi Wangondu & Associates</span>
+            <span class="brand-subline">Certified Public Accountants (K)</span>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" 
+                aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="aboutthefirm.html" aria-current="page">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Our Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactpage.html">Contact Us</a>
+            </li>
+            <li class="nav-item ms-lg-3 my-2 my-lg-0">
+              <a class="btn-mwa-cta" href="BOOKACONSULTATION.html">
+                <i class="bi bi-calendar2-check me-1"></i> Book a Consultation
+              </a>
+            </li>
+            <li class="nav-item ms-lg-2 d-md-none mt-2">
+              <a class="btn btn-sm btn-outline-light w-100" href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener">
+                <i class="bi bi-person-badge me-1"></i> Employee Portal
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <section class="section light-bg">
-    <div class="container">
-      <img src="https://www.kenyabizlist.com/logos/16046.jpg" alt="logo" class="logo" width="100%" height="350px">
-      <h1><b>About Us</b></h1>
-      <h2>Founded in 2010, Mwangi Wangondu & Associates is a premier audit and advisory firm serving clients across Kenya and East Africa.</h2>
-      <h2>Our team of professionals is here to help you navigate financial complexity and grow sustainably.</h2>
-
-      <div class="tile-grid">
-        <div class="tile">
-          <h3>Who We Are</h3>
-          <p> Mwangi Wangondu & Associates is a registered firm of Certified Public Accountants that offers Audit Assurance and Financial Capacity Development Services with over 15 years of working experience of its key management team across several countries in Africa.</p>
-            <p> The Firm has undertaken various assignments in Kenya,  Uganda, Tanzania, Zambia and Rwanda. The Firm has a pool of experts drawn from people with excellent knowledge of formulating homegrown solutions to meet emerging challenges in a sustainable way. Our team’s skills draw from long experience in both the local business and development environment and practices, custom and legal requirements by employing international standards and best practices. </p>
-            <p>In particular, we have a distinction in our management team in service delivery to the public entities companies, government institutions, Cooperative Societies, Private companies, Public Development Programmes and Projects and, the NGO sector.</p>
-        </div>
-        <div class="tile">
-          <h1>Our Founder</h1>
-          <p>CPA Mwangi Wangondu is a lead auditor with over 17 years of experience, a member of ICPAK, and an expert in corporate audits and SME advisory.</p>
-          <h3> CPA Mwangi Wang'ondu</h3>
-<h4>Professional Experience</h4>
-<p>CPA Mwangi is currently the Managing Partner of the firm and leader of Audit / Tax Services. He has over 15 Years in Financial Audit, Accountancy, Taxation and Financial Management Consultancy.</p>
-
-<h4>Professional Qualifications and Memberships:</h4>
-<p>CPA Mwangi holds the following qualifications and memberships:</p>
-<p> PhD in Business Management </p>
-<p> Masters in Business Administration </p>
-<p>Masters in Taxation & Customs  Administration</p>
-<p>Bachelor of Finance </p>
-<p>Certified Public Accountant Kenya (CPA-K) </p>
-<p> A member of the Institute of Certified Public Accountants of Kenya - CPA (K) </p>
-
-
-        </div>
-        <div class="tile">
-          <h3>Our Approach</h3>
-          <p>We collaborate with finance, HR, IT, and legal experts to provide holistic, innovative, and practical solutions tailored to the region’s business challenges.</p>
-          <p> We undertake statutory financial audits, project audits, feasibility studies, project design, implementation, monitoring and evaluation, capacity building involving fundraising techniques, organizational development, training on accountancy/book keeping and sound financial management, sound procurement policies, proposal writing, staff recruitment, design of budgetary and cost control systems.</p> 
-            <p>We have designed and assisted implement comprehensive System Manuals on Financial Management & Accounting, HR Policies and Procedure Systems and Project Management. </p>
-            <p>Our Financial Management Agency (FMA) services package cannot fail to be given special mention. In addition, we provide external/ internal auditing and accountancy services at competitive terms and conditions.</p>
-        </div>
-        <div class="tile">
-          <h3>Credentials</h3>
-          <ul>
-            <li>Registered and regulated by ICPAK</li>
-            <li>Professionals in good standing</li>
-            <li>15+ years of operational excellence</li>
-            <li> Audit methodology aligned with International Standards on Auditing (ISA) </li>
-             <li>Compliance with IFRS and IPSAS frameworks </li>
-              <li> Regular internal and peer quality reviews </li>
-               <li> Ethics and Integrity Code enforced across all engagements </li>
-                <li> Trained in donor and NGO financial audit requirements </li>
-                 <li> Multi-sector audit experience across public and private domains </li>
-                 <li> Data security and confidentiality protocols in place </li>
-                 <li> Continuous professional development (CPD) for all staff </li>
-                 <li> Strong reputation for timely, value-driven service delivery</li>
-                 <li> Proven track record in forensic, investigative, and statutory audits</li>
-                  <li>Established cross-disciplinary partnerships (legal, IT, HR, tax) </li>
-                   <li>Equipped with secure digital audit tools and cloud collaboration systems </li>
-                    <li>Skilled in risk assessment, internal controls, and fraud detection </li>
-                     <li> Extensive experience in both public and private sector audits </li>
-          </ul>
-        </div>
-        <div class="tile">
-          <h3>Client Sectors</h3>
-          <ul>
-            <li>NGOs and Charitable Trusts</li>
-            <li>Private Firms and SMEs</li>
-            <li>Educational & Healthcare Institutions</li>
-            <li>Faith-Based and Donor-Funded Groups</li>
-            <li> Private and Family-Owned Businesses-SMEs, startups, and holding companies seeking financial clarity and growth.</li> 
-            <li> Financial Institutions -SACCOs, microfinance, insurance, and pension schemes.</li>
-            <li> Real Estate and Construction Firms- Property developers, architectural firms, and contractors.</li> 
-            <li> Government and Public Sector Entities-State corporations, county governments, and regulatory bodies</li> 
-            <li>Professional Services Firms -Law firms, consulting agencies, engineering firms.</li> 
-            <li> Healthcare Providers -Hospitals, clinics, pharmacies, and medical labs.</li> 
-            <li> Educational Institutions -Schools, colleges, universities, and educational trusts.</li> 
-            <li>Logistics and Transportation-Freight companies, delivery startups, and public transport operators. </li> 
-            <li> Non-Governmental Organizations (NGOs) -International NGOs, faith-based organizations, and CBOs.</li> 
-            <li> Hospitality and Tourism -Hotels, resorts, and tour operators.</li>
-            <li> Manufacturing and Agro-Processing-Industrial producers, agro-enterprises, and packaging firms.</li>
-            <li>Retail and E-commerce Businesses -Supermarkets, wholesalers, online shops.</li>
-          </ul>
-        </div>
-        <div class="tile">
-          <h3>Our Values</h3>
-          <div style="display: flex; justify-content: space-between;">
-  <!-- Left Side -->
-  <div>
-    <p>1. Integrity</p>
-    <p>2. Accountability</p>
-    <p>3. Respect</p>
-    <p>4. Teamwork</p>
-    <p>5. Innovation</p>
-    <p>6. Customer Focus</p>
-    <p>7. Transparency</p>
-    <p>8. Sustainability</p>
-    <p>9. Diversity & Inclusion</p>
-    <p>10. Professionalism</p>
-  </div>
-
-  <!-- Right Side -->
-  <div>
-    <p>11. Excellence</p>
-    <p>12. Continuous Learning</p>
-    <p>13. Social Responsibility</p>
-    <p>14. Trustworthiness</p>
-    <p>15. Agility</p>
-    <p>16. Empathy</p>
-    <p>17. Quality Service</p>
-    <p>18. Fairness</p>
-    <p>19. Commitment</p>
-    <p>20. Leadership</p>
-  </div>
-</div>
-
- </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <section class="cta-section">
+  <main id="main">
+    
+    <!-- SUBHERO BANNER -->
+    <section class="subhero-banner">
       <div class="container">
-        <h2>Need Expert Financial Insight?</h2>
-        <p>We provide tailor-made audit and advisory solutions for startups, SMEs, NGOs, and corporations.</p>
-        <a href="services.html" class="btn-primary">Explore Our Services</a>
+        <div class="hero-eyebrow">
+          <i class="bi bi-building"></i> Established 2010 &bull; 15+ Years Excellence
+        </div>
+        <h1 class="display-5 fw-bold">About Our Firm</h1>
+        <p class="subhero-lead">
+          A premier audit, tax, and advisory partnership serving organizations across Kenya and the East &amp; Central African region.
+        </p>
       </div>
     </section>
+
+    <!-- FIRM PROFILE & REGIONAL STORY -->
+    <section class="section-py">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 reveal-up">
+            <span class="section-eyebrow">Who We Are</span>
+            <h2 class="section-title">Institutional Financial Integrity Rooted in African Excellence</h2>
+            <p>
+              Founded in 2010, <strong>Mwangi Wangondu &amp; Associates</strong> is a registered firm of Certified Public Accountants that offers Audit Assurance and Financial Capacity Development Services with over 15 years of operational experience across several countries in Africa.
+            </p>
+            <p>
+              The firm has undertaken high-impact engagements in <strong>Kenya, Uganda, Tanzania, Zambia, and Rwanda</strong>. We maintain a multidisciplinary pool of professionals with unmatched knowledge of formulating homegrown solutions to emerging operational challenges in a sustainable manner.
+            </p>
+            <p>
+              Our team draws from long-standing experience in both local and regional business environments, statutory regulations, and custom legal requirements, while anchoring every audit on international standards and best practices.
+            </p>
+            <div class="p-3 bg-light-alt rounded border-start border-primary border-4 mt-3">
+              <p class="mb-0 text-dark fw-medium">
+                "We take distinct pride in our senior team’s specialized service delivery to public entities, state corporations, government institutions, Cooperative Societies, private firms, public development programmes, and the international NGO sector."
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal-up">
+            <div class="mwa-card shadow-sm">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="https://www.kenyabizlist.com/logos/16046.jpg" alt="Firm Seal" class="brand-logo-img" style="height: 54px;">
+                <div>
+                  <h4 class="mb-0">Regional Footprint</h4>
+                  <span class="text-muted small">East &amp; Central Africa Practice</span>
+                </div>
+              </div>
+              <p class="text-muted mb-4 small">
+                Key countries where Mwangi Wangondu &amp; Associates has completed statutory audits, advisory, and capacity building assignments:
+              </p>
+              <div class="row g-2 mb-4">
+                <div class="col-sm-6">
+                  <div class="p-2 border rounded d-flex align-items-center gap-2">
+                    <i class="bi bi-geo-alt-fill text-primary"></i> <strong>Kenya</strong> (Headquarters)
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-2 border rounded d-flex align-items-center gap-2">
+                    <i class="bi bi-geo-alt-fill text-primary"></i> <strong>Uganda</strong>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-2 border rounded d-flex align-items-center gap-2">
+                    <i class="bi bi-geo-alt-fill text-primary"></i> <strong>Tanzania</strong>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-2 border rounded d-flex align-items-center gap-2">
+                    <i class="bi bi-geo-alt-fill text-primary"></i> <strong>Zambia</strong>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="p-2 border rounded d-flex align-items-center gap-2">
+                    <i class="bi bi-geo-alt-fill text-primary"></i> <strong>Rwanda</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex gap-3">
+                <a href="BOOKACONSULTATION.html" class="btn-mwa-primary w-100">
+                  <i class="bi bi-calendar-check me-1"></i> Book a Consultation
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION & VISION SECTION -->
+    <section class="section-py bg-light-alt" id="mission-vision">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <span class="section-eyebrow">Strategic Intent</span>
+          <h2 class="section-title">Our Mission &amp; Vision</h2>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 reveal-up">
+            <div class="mv-card">
+              <div class="service-icon-box">
+                <i class="bi bi-compass"></i>
+              </div>
+              <h3 class="card-title-mwa">Our Mission</h3>
+              <p class="card-text-mwa">
+                To empower businesses and organizations with reliable, transparent, and strategic financial solutions that foster accountability, growth, and long-term sustainability.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 reveal-up">
+            <div class="mv-card vision">
+              <div class="service-icon-box" style="background: rgba(13, 130, 223, 0.15); color: #0d82df;">
+                <i class="bi bi-eye"></i>
+              </div>
+              <h3 class="card-title-mwa">Our Vision</h3>
+              <p class="card-text-mwa">
+                To be the leading audit and advisory partner in Africa — transforming the way financial systems support innovation, development, and ethical leadership across sectors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR APPROACH & METHODOLOGY -->
+    <section class="section-py">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <span class="section-eyebrow">Consultancy Philosophy</span>
+          <h2 class="section-title">Our Holistic Approach</h2>
+          <p class="section-subtitle">
+            We collaborate with finance, HR, IT, and legal specialists to provide holistic, innovative, and practical solutions tailored to each client's unique operating environment.
+          </p>
+        </div>
+
+        <div class="row g-4 reveal-up">
+          <div class="col-md-4">
+            <div class="mwa-card">
+              <div class="service-icon-box">
+                <i class="bi bi-check2-all"></i>
+              </div>
+              <h4 class="card-title-mwa">Statutory &amp; Project Audits</h4>
+              <p class="card-text-mwa">
+                Comprehensive financial audits, project feasibility studies, design, monitoring and evaluation (M&amp;E), and strict compliance validation for commercial and grant-funded operations.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="mwa-card">
+              <div class="service-icon-box">
+                <i class="bi bi-journal-text"></i>
+              </div>
+              <h4 class="card-title-mwa">Institutional Manuals &amp; Systems</h4>
+              <p class="card-text-mwa">
+                Design and rollout of comprehensive System Manuals on Financial Management &amp; Accounting, HR Policies and Procedure Systems, and Project Management governance frameworks.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="mwa-card">
+              <div class="service-icon-box">
+                <i class="bi bi-briefcase-fill"></i>
+              </div>
+              <h4 class="card-title-mwa">Financial Management Agency (FMA)</h4>
+              <p class="card-text-mwa">
+                Our flagship Financial Management Agency package cannot fail to be given special mention — delivering outsourced management, budgetary control, fundraising support, and organizational capacity building.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER & LEADERSHIP -->
+    <section class="section-py bg-light-alt" id="founder">
+      <div class="container">
+        <div class="founder-card reveal-up">
+          <div class="row g-0">
+            <div class="col-lg-4 founder-img-col">
+              <div class="text-center text-white">
+                <div class="founder-avatar-box mx-auto mb-3">
+                  <img src="https://www.kenyabizlist.com/logos/16046.jpg" alt="CPA Mwangi Wangondu" loading="lazy">
+                </div>
+                <h3 class="text-white mb-1">CPA Mwangi Wang'ondu</h3>
+                <p class="text-info mb-1 small">Managing Partner &bull; Leader of Audit / Tax Services</p>
+                <span class="badge bg-primary text-white">ICPAK Member - CPA (K)</span>
+              </div>
+            </div>
+
+            <div class="col-lg-8 p-4 p-md-5">
+              <span class="section-eyebrow">Managing Partner Profile</span>
+              <h2 class="section-title">Leadership Grounded in Over 17 Years of Expertise</h2>
+              <p>
+                CPA Mwangi Wangondu is currently the Managing Partner of the firm and leader of Audit and Tax Services. He brings over 17 years of specialized practice in financial audit, accountancy, taxation, and financial management consultancy.
+              </p>
+              <p>
+                As a lead auditor and dedicated ICPAK member, CPA Mwangi has advised commercial enterprises, large corporations, public boards, and civil society organizations across East Africa on risk mitigation, tax strategy, and internal control frameworks.
+              </p>
+
+              <h5 class="fw-bold text-dark mt-4 mb-2">Professional Qualifications &amp; Memberships</h5>
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="qual-badge"><i class="bi bi-mortarboard me-1"></i> PhD in Business Management</span>
+                <span class="qual-badge"><i class="bi bi-book me-1"></i> Masters in Business Administration (MBA)</span>
+                <span class="qual-badge"><i class="bi bi-receipt-cutoff me-1"></i> Masters in Taxation &amp; Customs Administration</span>
+                <span class="qual-badge"><i class="bi bi-cash-stack me-1"></i> Bachelor of Finance</span>
+                <span class="qual-badge"><i class="bi bi-patch-check me-1"></i> Certified Public Accountant Kenya (CPA-K)</span>
+                <span class="qual-badge"><i class="bi bi-award me-1"></i> Member of ICPAK - CPA (K)</span>
+              </div>
+
+              <div class="d-flex gap-3">
+                <a href="BOOKACONSULTATION.html" class="btn-mwa-primary">
+                  Book a Leadership Consultation <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE VALUES (ALL 20 AUTHENTIC VALUES) -->
+    <section class="section-py" id="values">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <span class="section-eyebrow">Our Ethical Anchor</span>
+          <h2 class="section-title">Our 20 Core Values</h2>
+          <p class="section-subtitle">
+            The fundamental principles guiding every audit engagement, client relationship, and advisory service we deliver.
+          </p>
+        </div>
+
+        <div class="values-grid reveal-up">
+          <div class="value-card"><div class="value-number">1</div><div><strong>Integrity</strong><div class="text-muted small">Honesty and moral principles in all dealings</div></div></div>
+          <div class="value-card"><div class="value-number">2</div><div><strong>Accountability</strong><div class="text-muted small">Taking responsibility for our actions and deliverables</div></div></div>
+          <div class="value-card"><div class="value-number">3</div><div><strong>Respect</strong><div class="text-muted small">Valuing diverse perspectives and dignity</div></div></div>
+          <div class="value-card"><div class="value-number">4</div><div><strong>Teamwork</strong><div class="text-muted small">Collaborative approach to problem-solving</div></div></div>
+          <div class="value-card"><div class="value-number">5</div><div><strong>Innovation</strong><div class="text-muted small">Continuous improvement and creative solutions</div></div></div>
+          <div class="value-card"><div class="value-number">6</div><div><strong>Customer Focus</strong><div class="text-muted small">Client satisfaction is our utmost priority</div></div></div>
+          <div class="value-card"><div class="value-number">7</div><div><strong>Transparency</strong><div class="text-muted small">Clear communication and complete openness</div></div></div>
+          <div class="value-card"><div class="value-number">8</div><div><strong>Sustainability</strong><div class="text-muted small">Building long-term value and environmental consciousness</div></div></div>
+          <div class="value-card"><div class="value-number">9</div><div><strong>Diversity &amp; Inclusion</strong><div class="text-muted small">Embracing varied backgrounds and perspectives</div></div></div>
+          <div class="value-card"><div class="value-number">10</div><div><strong>Professionalism</strong><div class="text-muted small">High standards in all professional conduct</div></div></div>
+          <div class="value-card"><div class="value-number">11</div><div><strong>Excellence</strong><div class="text-muted small">Striving for superior quality in every engagement</div></div></div>
+          <div class="value-card"><div class="value-number">12</div><div><strong>Continuous Learning</strong><div class="text-muted small">Commitment to lifelong professional development</div></div></div>
+          <div class="value-card"><div class="value-number">13</div><div><strong>Social Responsibility</strong><div class="text-muted small">Contributing positively to community and society</div></div></div>
+          <div class="value-card"><div class="value-number">14</div><div><strong>Trustworthiness</strong><div class="text-muted small">Unshakable reliability and dependability</div></div></div>
+          <div class="value-card"><div class="value-number">15</div><div><strong>Agility</strong><div class="text-muted small">Flexibility and responsiveness to changing needs</div></div></div>
+          <div class="value-card"><div class="value-number">16</div><div><strong>Empathy</strong><div class="text-muted small">Understanding client challenges and context</div></div></div>
+          <div class="value-card"><div class="value-number">17</div><div><strong>Quality Service</strong><div class="text-muted small">Delivering superior results consistently</div></div></div>
+          <div class="value-card"><div class="value-number">18</div><div><strong>Fairness</strong><div class="text-muted small">Equitable treatment in all transactions</div></div></div>
+          <div class="value-card"><div class="value-number">19</div><div><strong>Commitment</strong><div class="text-muted small">Dedication to excellence and client success</div></div></div>
+          <div class="value-card"><div class="value-number">20</div><div><strong>Leadership</strong><div class="text-muted small">Guiding clients toward sustainable institutional growth</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS FULL ROSTER -->
+    <section class="section-py bg-light-alt" id="credentials-full">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <span class="section-eyebrow">Quality &amp; Compliance</span>
+          <h2 class="section-title">Institutional Credentials</h2>
+          <p class="section-subtitle">
+            Our firm maintains strict conformity with professional bodies and international auditing standards.
+          </p>
+        </div>
+
+        <div class="credentials-grid reveal-up">
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Registered &amp; regulated by ICPAK</strong><br><span class="text-muted small">Institute of Certified Public Accountants of Kenya.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Professionals in good standing</strong><br><span class="text-muted small">Full active licensing across all leading practitioners.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>15+ years of operational excellence</strong><br><span class="text-muted small">Proven performance since firm inception in 2010.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>International Standards on Auditing (ISA)</strong><br><span class="text-muted small">Audit methodology strictly benchmarked to ISA.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>IFRS and IPSAS Frameworks</strong><br><span class="text-muted small">Commercial and public sector reporting adherence.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Regular internal &amp; peer quality reviews</strong><br><span class="text-muted small">Independent audit file reviews ensuring total objectivity.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Ethics &amp; Integrity Code enforced</strong><br><span class="text-muted small">Mandatory ethical code observed across all client engagements.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Donor &amp; NGO audit trained</strong><br><span class="text-muted small">Specialized in bilateral and multilateral funding compliance.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Multi-sector public &amp; private experience</strong><br><span class="text-muted small">Spanning ministries, corporations, SACCOs, and SMEs.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Data security &amp; confidentiality protocols</strong><br><span class="text-muted small">Safeguarding proprietary client financial information.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Continuous Professional Development (CPD)</strong><br><span class="text-muted small">Ongoing technical and statutory training for all audit staff.</span></div>
+          </div>
+          <div class="credential-item">
+            <i class="bi bi-check2-circle credential-icon"></i>
+            <div><strong>Forensic, investigative &amp; statutory track record</strong><br><span class="text-muted small">Proven capability in complex forensic audit investigations.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section-py bg-dark text-white text-center" style="background: linear-gradient(135deg, #00152a 0%, #001f3f 60%, #003366 100%) !important;">
+      <div class="container reveal-up">
+        <h2 class="text-white display-6 fw-bold mb-3">Partner With an Established Practice</h2>
+        <p class="lead text-white-50 mx-auto mb-4" style="max-width: 680px;">
+          Reach out to our senior team today to discuss statutory audit requirements, corporate tax advisory, or system review engagements.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a class="btn-mwa-cta btn-lg" href="BOOKACONSULTATION.html">
+            <i class="bi bi-calendar-check me-2"></i> Book a Consultation
+          </a>
+          <a class="btn-mwa-outline-light btn-lg" href="services.html">
+            Explore All Practice Areas
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 Mwangi Wangondu & Associates. All rights reserved.</p>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 footer-brand">
+          <h4>Mwangi Wangondu &amp; Associates</h4>
+          <p class="footer-lead">
+            A premier audit, tax, and advisory firm founded in 2010. Serving Kenya and East Africa with unwavering integrity and financial clarity.
+          </p>
+          <div class="badge-reg mb-2">
+            <i class="bi bi-shield-check"></i> Registered by ICPAK
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+            <li><a href="aboutthefirm.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Our Services</a></li>
+            <li><a href="contactpage.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+            <li><a href="BOOKACONSULTATION.html"><i class="bi bi-chevron-right"></i> Book Consultation</a></li>
+            <li><a href="https://mwangiandwangonduassociates.com:2096" target="_blank" rel="noopener"><i class="bi bi-lock"></i> Employee Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading">Practice Areas</h5>
+          <ul class="footer-links-list">
+            <li><a href="services.html#audit"><i class="bi bi-chevron-right"></i> Audit, Assurance &amp; Advisory</a></li>
+            <li><a href="services.html#tax"><i class="bi bi-chevron-right"></i> Corporate &amp; International Tax</a></li>
+            <li><a href="services.html#systems"><i class="bi bi-chevron-right"></i> Financial Systems &amp; ERP</a></li>
+            <li><a href="services.html#advisory"><i class="bi bi-chevron-right"></i> Financial &amp; Risk Advisory</a></li>
+            <li><a href="services.html#fma"><i class="bi bi-chevron-right"></i> Financial Management Agency (FMA)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading">Contact Details</h5>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <div>
+              <strong>Telephone:</strong><br>
+              <a href="tel:+254723606653">+254 723606653</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <div>
+              <strong>Email:</strong><br>
+              <a href="mailto:admin@mwangiandwangonduassociates.com">admin@mwangiandwangonduassociates.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div>
+              <strong>Offices:</strong><br>
+              <span>Vision Plaza, Mombasa Road, Nairobi</span><br>
+              <span>Kitengela Office (Near Hindu Temple)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div>
+          &copy; 2026 Mwangi Wangondu &amp; Associates. All rights reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <span>Registered Certified Public Accountants</span>
+          <span>&bull;</span>
+          <span>Kenya &bull; East Africa</span>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
-
