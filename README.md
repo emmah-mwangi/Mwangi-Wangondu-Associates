@@ -2,7 +2,7 @@
 
 Official Website of Mwangi Wangondu & Associates - A Premier Audit and Advisory Firm
 
-**Website:** https://www.mwangiandwangonduassociates.com/
+**Website:** http://mwangiwangonduandassociates.co.ke/
 
 ---
 
@@ -167,7 +167,7 @@ We collaborate with finance, HR, IT, and legal experts to provide holistic, inno
 
 ## Contact & Resources
 
-- **Website:** https://www.mwangiandwangonduassociates.com/
+- **Website:** http://mwangiwangonduandassociates.co.ke/
 - **Employee Portal:** https://mwangiandwangonduassociates.com:2096
 - **Book a Consultation:** Visit our website or contact us directly
 
